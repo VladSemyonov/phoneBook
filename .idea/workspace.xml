@@ -37,7 +37,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../javascript-projects/ukraine/ua/css/index2.css" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -50,6 +50,7 @@
       <option name="presentableId" value="Default" />
       <updated>1609926705836</updated>
       <workItem from="1609926709508" duration="1696000" />
+      <workItem from="1609931271756" duration="1159000" />
     </task>
     <servers />
   </component>
@@ -66,11 +67,16 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="351" y="142" key="EditFileWatcherDialog" timestamp="1609927489554">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="351" y="142" key="EditFileWatcherDialog/0.0.1366.728@0.0.1366.728" timestamp="1609927489554" />
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1609931581307">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1609931581307" />
   </component>
 </project>
