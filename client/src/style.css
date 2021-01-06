@@ -1,0 +1,169 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+.topnav {
+  width: 100%;
+  max-width: 800px;
+  height: 40px;
+  background-color: grey;
+  margin: 0 auto;
+}
+
+.navbar {
+  width: 500px;
+  height: 100%;
+  padding-top: 10px;
+}
+
+.navlink {
+  width: 70px;
+  position: relative;
+  height: 100%;
+  color: white;
+  font-size: 18px;
+  margin-right: 30px;
+  text-align: center;
+}
+.navlink::after {
+  content: "";
+  position: absolute;
+  display: none;
+  height: 3px;
+  background-color: white;
+  width: inherit;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+}
+
+.active::after {
+  display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav :not(:first-child) {
+    display: none;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.main-content {
+  width: inherit;
+  margin-top: 40px;
+}
+
+.search-div {
+  display: inline-flex;
+  justify-content: space-between;
+  width: inherit;
+}
+.search-div button {
+  width: 200px;
+  border: 2px solid black;
+  background-color: greenyellow;
+}
+
+.search {
+  width: 250px;
+  height: 25px;
+  border: solid black 2px;
+  border-radius: 0;
+}
+
+.card-container {
+  margin: 20px auto;
+  width: 100%;
+  max-width: 800px;
+  height: 150px;
+}
+
+.card-item {
+  display: inline-flex;
+  align-items: center;
+  width: 780px;
+  padding: 0 10px;
+  height: inherit;
+  justify-content: space-between;
+  background-color: darkseagreen;
+}
+
+.card-img {
+  float: left;
+  width: 100px;
+  height: 100px;
+}
+
+.info {
+  margin: 20px 20px;
+}
+.info span {
+  display: block;
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+.card-buttons {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  height: 100px;
+}
+.card-buttons button {
+  width: 90px;
+  height: 40px;
+  border-radius: 0;
+  border: none;
+  font-weight: bold;
+}
+
+.add-form {
+  position: fixed;
+  top: 11%;
+  right: 45px;
+  width: 250px;
+  background-color: darkseagreen;
+  border: 2px solid black;
+}
+
+.preimage {
+  width: 250px;
+  height: 250px;
+}
+
+.form-div {
+  width: inherit;
+  margin: 5px 0;
+  font-size: 19px;
+}
+.form-div input {
+  display: block;
+}
+.form-div button {
+  width: 90px;
+  height: 30px;
+  font-size: 19px;
+}
+.form-div span {
+  width: inherit;
+  height: 15px;
+  font-size: 14px;
+  color: red;
+  text-align: right;
+}
+
+.enter-value {
+  width: inherit;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,32 @@
+.topnav {
+  width: 100%;
+  height: 40px;
+  background-color: grey;
+  position: fixed;
+}
+
+.navbar {
+  margin: o auto;
+  width: 500px;
+  height: 100%;
+}
+
+.navlink {
+  width: 70px;
+  height: 100%;
+}
+.navlink::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: blue;
+  display: none;
+  position: absolute;
+  top: 90%;
+  z-index: 2;
+}
+.navlink:active::after {
+  display: block;
+}
+
+/*# sourceMappingURL=styles.css.map */
