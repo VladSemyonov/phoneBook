@@ -18,13 +18,13 @@ const TopNavigation = () => {
         <div className="topnav">
             <div className={'navbar'}>
                 <NavLink onClick={changeClass} className={'navlink'} exact to="/">
-                    Home
+                    <span>Home</span>
                 </NavLink>
                 <NavLink onClick={changeClass} className={'navlink'} exact to="/numbers">
-                    Numbers
+                    <span>Numbers</span>
                 </NavLink>
                 <NavLink onClick={changeClass} className={'navlink'} exact to="/about">
-                    About
+                    <span>About</span>
                 </NavLink>
             </div>
         </div>

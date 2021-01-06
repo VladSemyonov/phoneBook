@@ -12,33 +12,36 @@
   margin: 0 auto
 
 .navbar
-  width: 500px
+  width: inherit - 20px
   height: 100%
   padding-top: 10px
+  display: flex
+  justify-content: space-around
 
 .navlink
-  width: 70px
-  position: relative
+  width: 50px
   height: 100%
   color: white
   font-size: 18px
   margin-right: 30px
   text-align: center
-  &::after
-    content: ''
-    position: absolute
-    display: none
-    height: 3px
-    background-color: white
-    width: inherit
-    top: 100%
-    left: 0
-    z-index: 1
+  span
+    position: relative
+    width: 40px
+    &::after
+      content: ''
+      position: absolute
+      display: none
+      height: 3px
+      background-color: white
+      width: inherit
+      top: 60%
+      left: 0
+      z-index: 1
 
 .active
   &::after
     display: block
-
 
 .topnav
   @media screen and (max-width: 600px)
