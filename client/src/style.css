@@ -8,12 +8,12 @@
   width: 100%;
   max-width: 800px;
   height: 40px;
-  background-color: grey;
+  background-color: darkseagreen;
   margin: 0 auto;
 }
 
 .navbar {
-  width: inherit-20px;
+  width: inherit;
   height: 100%;
   padding-top: 10px;
   display: flex;

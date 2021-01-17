@@ -11,7 +11,6 @@ const TopNavigation = () => {
                 ? links[i].classList.add('active')
                 : links[i].classList.remove('active')
         }
-        console.log(e.target)
     }
 
     return (

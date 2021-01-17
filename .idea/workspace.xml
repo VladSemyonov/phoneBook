@@ -37,7 +37,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../javascript-projects/ukraine/ua/css/index2.css" />
+    <property name="last_opened_file_path" value="$USER_HOME$/WebstormProjects/VladSemyonov_ReactDev_testWork" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -51,6 +51,7 @@
       <updated>1609926705836</updated>
       <workItem from="1609926709508" duration="1696000" />
       <workItem from="1609931271756" duration="1159000" />
+      <workItem from="1609937372690" duration="33000" />
     </task>
     <servers />
   </component>
@@ -74,9 +75,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="351" y="142" key="EditFileWatcherDialog/0.0.1366.728@0.0.1366.728" timestamp="1609927489554" />
-    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1609931581307">
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1609937413032">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1609931581307" />
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1609937413032" />
   </component>
 </project>
