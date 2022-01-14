@@ -1,55 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import { useEffect, useState } from "react";
+import axios from "axios";
+import TopNav from "./components/TopNav";
+import { useAppDispatch } from "./app/hooks";
+import { init } from "./features/contact/contactSlice";
+import ContactList from "./components/Contacts/ContactList";
+import NewContact from "./components/NewContact";
+import { Button } from "reactstrap";
+
+interface Contacts {
+  phone: string;
+  name: string;
+  photo: string;
+  id: string;
+}
 
 function App() {
+  const dispatch = useAppDispatch();
+
+  const [toggleForm, setToggleForm] = useState(false);
+
+  useEffect(() => {
+    axios
+      .get<Contacts[]>("https://jsonplaceholder.typicode.com/users")
+      .then((res) => res.data)
+      .then((res) => dispatch(init(res)))
+      .catch((error) => console.log(error));
+  });
+
   return (
-    <div className="App">
+    <div className="pt-5 container">
+      <TopNav />
+      <Button className="mt-5" onClick={() => setToggleForm(!toggleForm)}>
+        Add new contact
+      </Button>
+      {toggleForm && <NewContact />}
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
+        <ContactList />
       </header>
     </div>
   );
