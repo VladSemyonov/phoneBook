@@ -1,0 +1,15 @@
+.mydiv {
+  width: 25%;
+}
+
+@media screen and (max-width: 575px) {
+  .mydiv {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mydiv {
+    width: 33%;
+  }
+}

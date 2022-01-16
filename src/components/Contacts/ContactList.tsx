@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from "react";
-import { CardGroup, Input } from "reactstrap";
+import { Input } from "reactstrap";
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
 import { search, users, searching } from "../../features/contact/contactSlice";
 import { Contact } from "../../types";

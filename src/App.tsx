@@ -1,36 +1,27 @@
 import { useEffect } from "react";
-import axios from "axios";
 import TopNav from "./components/TopNav";
 import { useAppDispatch } from "./app/hooks";
-import { init } from "./features/contact/contactSlice";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import NotFound from "./components/NotFound";
 import About from "./components/About";
 import Contacts from "./components/Contacts";
 import Home from "./components/Home";
-
-interface Contacts {
-  phone: string;
-  name: string;
-  photo: string;
-  id: string;
-}
+import { fetchUsers } from "./features/contact/ActionCreators";
+import "./style.scss";
+import MobileMenu from "./components/MobileMenu";
 
 function App() {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    axios
-      .get<Contacts[]>("https://jsonplaceholder.typicode.com/users")
-      .then((res) => res.data)
-      .then((res) => dispatch(init(res)))
-      .catch((error) => console.log(error));
+    dispatch(fetchUsers());
   });
 
   return (
     <BrowserRouter>
       <div className="pt-5 container">
         <TopNav />
+        <MobileMenu />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="contacts" element={<Contacts />} />

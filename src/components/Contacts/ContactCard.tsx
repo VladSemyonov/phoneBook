@@ -39,20 +39,37 @@ const ContactCard: FC<ContactCardProps> = ({ contact }) => {
   }
 
   return (
-    <div className="w-25 mw-25 px-2 my-4">
-      <Card>
-        <CardImg
-          alt="Contact photo"
-          src={contact.photo || pic}
-          top
-          width="100%"
-        />
+    <div className="card-div px-2 my-4">
+      <Card className="shadow">
+        <div className="card-div-img">
+          <CardImg
+            alt="Contact photo"
+            src={contact.photo || pic}
+            top
+            width="100%"
+            height="100%"
+          />
+        </div>
+
         <CardBody>
           {!toggle ? (
             <div>
-              <Button onClick={() => setToggle(true)}>Edit</Button>
-              <CardTitle tag="h5">{contact.name}</CardTitle>
+              <CardTitle tag="h5" className=" some-text">
+                {contact.name}
+              </CardTitle>
               <CardText>{contact.phone}</CardText>
+              <Button
+                onClick={() => setToggle(true)}
+                className="w-100 bg-success mb-2"
+              >
+                Edit
+              </Button>
+              <Button
+                onClick={() => dispatch(undo(contact.id))}
+                className="w-100 bg-danger"
+              >
+                Delete
+              </Button>
             </div>
           ) : (
             <div>
@@ -67,7 +84,6 @@ const ContactCard: FC<ContactCardProps> = ({ contact }) => {
               <Button onClick={() => change()}>Save</Button>
             </div>
           )}
-          <Button onClick={() => dispatch(undo(contact.id))}>Button</Button>
         </CardBody>
       </Card>
     </div>

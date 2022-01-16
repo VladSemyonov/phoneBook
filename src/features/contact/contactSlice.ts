@@ -1,15 +1,22 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
 import { Contact } from "../../types";
+import { fetchUsers } from "./ActionCreators";
 
 export interface CounterState {
   value: Contact[];
   searchValues: Contact[];
+  display: boolean;
+  error: string;
+  isLoading: boolean;
 }
 
 const initialState: CounterState = {
   value: [],
+  error: "",
+  isLoading: false,
   searchValues: [],
+  display: false,
 };
 
 export const counterSlice = createSlice({
@@ -23,15 +30,6 @@ export const counterSlice = createSlice({
     },
     undo: (state, action: PayloadAction<string>) => {
       state.value = state.value.filter((user) => user.id !== action.payload);
-    },
-    init: (state, action: PayloadAction<Contact[]>) => {
-      let result: Contact[] = [];
-      state.value = [];
-      for (let user of action.payload) {
-        const { name, phone, id } = user;
-        result.push({ name: name, phone: phone, id: id, photo: "" });
-      }
-      state.value.push(...result);
     },
     search: (state, action: PayloadAction<string>) => {
       let result: Contact[] = [];
@@ -51,12 +49,31 @@ export const counterSlice = createSlice({
     addItem: (state, action: PayloadAction<Contact>) => {
       state.value.push(action.payload);
     },
+    setDisplay: (state) => {
+      state.display = !state.display;
+    },
+  },
+  extraReducers: {
+    [fetchUsers.fulfilled.type]: (state, action: PayloadAction<Contact[]>) => {
+      state.isLoading = false;
+      state.error = "";
+      state.value = action.payload;
+    },
+    [fetchUsers.pending.type]: (state) => {
+      state.isLoading = true;
+    },
+    [fetchUsers.rejected.type]: (state, action: PayloadAction<string>) => {
+      state.isLoading = false;
+      state.error = action.payload;
+    },
   },
 });
 
-export const { undo, update, init, search, addItem } = counterSlice.actions;
+export const { undo, update, search, addItem, setDisplay } =
+  counterSlice.actions;
 
 export const users = (state: RootState) => state.users.value;
 export const searching = (state: RootState) => state.users.searchValues;
+export const formDisplay = (state: RootState) => state.users.display;
 
 export default counterSlice.reducer;

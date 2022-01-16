@@ -1,0 +1,62 @@
+.card-div {
+  width: 25%;
+}
+@media screen and (max-width: 992px) {
+  .card-div {
+    width: 33%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .card-div {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .card-div {
+    width: 100%;
+  }
+}
+
+.some-text {
+  font-size: 1rem;
+}
+
+.card-div-img {
+  height: 17rem;
+  overflow: hidden;
+  padding: 4px;
+}
+
+.activem {
+  position: relative;
+  color: white;
+  &::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 4px;
+    color: blue;
+    z-index: 99;
+    bottom: 0;
+  }
+}
+
+#main-menu {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  #main-menu {
+    display: none;
+  }
+}
+
+#mobile-menu {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  #mobile-menu {
+    display: block;
+  }
+}
