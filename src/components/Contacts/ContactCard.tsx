@@ -20,40 +20,39 @@ interface ContactCardProps {
 const ContactCard: FC<ContactCardProps> = ({ contact }) => {
   const dispatch = useAppDispatch();
   const [toggle, setToggle] = useState(false);
-  const [name, setName] = useState<Contact>({
+  const [item, setItem] = useState<Contact>({
     name: "",
     phone: "",
     photo: "",
     id: "",
   });
 
-  useEffect(() => setName(contact), [contact]);
+  useEffect(() => setItem(contact), [contact]);
 
   function change() {
-    dispatch(update(name));
+    dispatch(update(item));
     setToggle(false);
   }
 
   function edit(val: string, prop: string) {
-    setName({ ...name, [prop]: val });
+    setItem({ ...item, [prop]: val });
   }
 
   return (
     <div className="card-div px-2 my-4">
-      <Card className="shadow">
-        <div className="card-div-img">
-          <CardImg
-            alt="Contact photo"
-            src={contact.photo || pic}
-            top
-            width="100%"
-            height="100%"
-          />
-        </div>
-
+      <Card className="shadow card-main">
         <CardBody>
           {!toggle ? (
             <div>
+              <div className="card-div-img">
+                <CardImg
+                  alt="Contact photo"
+                  src={contact.photo || pic}
+                  top
+                  width="100%"
+                  height="100%"
+                />
+              </div>
               <CardTitle tag="h5" className=" some-text">
                 {contact.name}
               </CardTitle>
@@ -74,14 +73,21 @@ const ContactCard: FC<ContactCardProps> = ({ contact }) => {
           ) : (
             <div>
               <Input
-                value={name.name}
+                value={item.name}
                 onChange={(e) => edit(e.target.value, "name")}
               />
               <Input
-                value={name.phone}
+                value={item.phone}
                 onChange={(e) => edit(e.target.value, "phone")}
+                className="my-2"
               />
-              <Button onClick={() => change()}>Save</Button>
+              <Input
+                value={item.photo}
+                onChange={(e) => edit(e.target.value, "photo")}
+              />
+              <Button onClick={() => change()} className="my-2 w-100">
+                Save
+              </Button>
             </div>
           )}
         </CardBody>

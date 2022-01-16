@@ -75,5 +75,6 @@ export const { undo, update, search, addItem, setDisplay } =
 export const users = (state: RootState) => state.users.value;
 export const searching = (state: RootState) => state.users.searchValues;
 export const formDisplay = (state: RootState) => state.users.display;
+export const isLoading = (state: RootState) => state.users.isLoading;
 
 export default counterSlice.reducer;
