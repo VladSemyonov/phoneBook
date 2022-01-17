@@ -1,14 +1,41 @@
 .card-div {
   width: 25%;
 }
+
+.card-div-img {
+  height: 17rem;
+  overflow: hidden;
+  padding: 4px;
+}
+
+.card-main {
+  height: 460px;
+}
+
 @media screen and (max-width: 992px) {
   .card-div {
     width: 33%;
+  }
+
+  .card-div-img {
+    height: 13rem;
+  }
+
+  .card-main {
+    height: 400px;
   }
 }
 @media screen and (max-width: 768px) {
   .card-div {
     width: 50%;
+  }
+
+  .card-div-img {
+    height: 15rem;
+  }
+
+  .card-main {
+    height: 450px;
   }
 }
 @media screen and (max-width: 425px) {
@@ -17,18 +44,8 @@
   }
 }
 
-.card-main {
-  height: 460px;
-}
-
 .some-text {
   font-size: 1rem;
-}
-
-.card-div-img {
-  height: 17rem;
-  overflow: hidden;
-  padding: 4px;
 }
 
 .activem {

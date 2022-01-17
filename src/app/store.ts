@@ -1,11 +1,9 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 import usersReducer from "../features/contact/contactSlice";
-import searchValuesReducer from "../features/contact/contactSlice";
 
 export const store = configureStore({
   reducer: {
     users: usersReducer,
-    searchValues: searchValuesReducer,
   },
 });
 

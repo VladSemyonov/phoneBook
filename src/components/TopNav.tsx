@@ -12,7 +12,7 @@ const TopNav: FC = () => {
   useEffect(() => {
     const path = window.location.pathname;
     setActiveLink(path);
-  }, [window.location.pathname]);
+  }, []);
 
   return (
     <Navbar color="warning" expand="md" fixed="top" id="main-menu">

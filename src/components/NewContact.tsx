@@ -31,7 +31,6 @@ const NewContact: FC = () => {
     e.preventDefault();
     checkData(obj);
     if (!Object.keys(errors).length) {
-      console.log("up");
       let _id = shortid.generate();
       obj.id = _id;
       dispatch(addItem(obj));

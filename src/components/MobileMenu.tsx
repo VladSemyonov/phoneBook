@@ -20,14 +20,14 @@ const MobileMenu: FC = () => {
   useEffect(() => {
     const path = window.location.pathname;
     setActiveLink(path);
-  }, [window.location.pathname]);
+  }, []);
 
   return (
     <div id="mobile-menu">
       <Navbar color="warning" light>
         <NavbarToggler className="me-2" onClick={() => setShow(!show)} />
         <NavbarBrand className="me-auto" href="/">
-          Home
+          Phone-book
         </NavbarBrand>
       </Navbar>
       <Navbar color="warning" light>
