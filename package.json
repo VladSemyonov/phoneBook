@@ -27,7 +27,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest ./src/features/contact/counterSlice.spec.ts",
+    "test": "jest ./src/features/contact/contactSlice.spec.ts",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
